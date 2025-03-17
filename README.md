@@ -82,8 +82,6 @@ router.post("/contact", (req, res) => {
 });
 
 module.exports = router;
-📸 Screenshots
-(Add actual screenshots here)
 
 Homepage	Services Page	Contact Page
 📄 License
