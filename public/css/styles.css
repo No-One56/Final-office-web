@@ -1,0 +1,879 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #07897e;
+  padding: 0;
+  margin: 0;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: radial-gradient(circle at 40% 60%, #07897e, #070707);
+  /* Transparent effect */
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  /* Smooth height transition */
+  height: 70px;
+}
+
+/* Smaller navbar when scrolling */
+.navbar.scrolled {
+  height: 70px;
+  /* Reduced height when scrolled */
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 1);
+  /* Full opaque background when scrolled */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#logo-text {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+}
+
+#logo-text span {
+  display: inline-block;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: drop-letter 0.5s ease-in-out forwards;
+}
+
+
+
+
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu li {
+  position: relative;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.menu li:hover {
+  color: gold;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu li a:hover {
+  color: gold;
+}
+
+.menu li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: gold;
+  transition: width 0.3s ease;
+}
+
+.menu li:hover::after {
+  width: 100%;
+}
+
+
+
+/* From Uiverse.io by ShrinilDhorda */ 
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.btn:active {
+  scale: 0.92;
+}
+
+.btn:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+.call-icon {
+  font-size: 18px;
+
+}
+
+
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: absolute;
+  top: 20px; /* Set top position of hamburger */
+  right: 20px; /* Align hamburger to the right */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 950px) {
+  /* Menu Settings for Small Screens */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust the top margin */
+    right: 10px;
+    background-color: #07897e;
+    width: 100%; /* Decrease width for mobile view */
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+
+  /* Contact Button inside hamburger (keeps existing style) */
+  .btn {
+    display: none;
+    margin-top: 20px;
+  }
+
+  /* Show Hamburger Icon */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Show Menu when Active */
+  .menu.show {
+    display: flex;
+  }
+
+  /* Cross Icon When Menu is Active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+  }
+}
+
+
+/* Animations */
+@keyframes drop-letter {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes line-grow {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at 50% 50%, #4ea8a1, #07897e);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+}
+
+/* Grains Container (Canvas for Particle Animation) */
+#grain-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* Grain Styling */
+.grain {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: moveGrain 5s linear infinite;
+  opacity: 0.6;
+}
+
+/* Grain Movement Animation */
+@keyframes moveGrain {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  60% {
+    transform: translate(-50px, 50px) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(50px, -50px) rotate(360deg);
+  }
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+
+/* Container for the text */
+.animated-text {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+/* Each word element */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-100px);
+  /* Start off-screen to the left */
+  animation: throwIn 1s ease-out forwards;
+  margin-right: 10px;
+}
+
+/* Animation for the throw effect */
+@keyframes throwIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+    /* Start off-screen */
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(30px);
+    /* Move the word towards the right */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* Final position */
+  }
+}
+
+/* Sequential delay for each word */
+.word:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.word:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.word:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.word:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+
+/* Paragraph Animation */
+.description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+  opacity: 0;
+  padding-left: 50px;
+  transform: translateY(50px);
+  animation: riseUp 1.5s 0.5s ease-out forwards;
+}
+
+@keyframes riseUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Button styles */
+/* Combined Button Styles */
+.animated-button {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  margin-left: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: pulse-2 2s infinite;
+}
+
+.animated-button:active {
+  scale: 0.92;
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: left 0.4s ease;
+}
+
+.animated-button:hover::before {
+  left: 0;
+}
+
+.animated-button:hover {
+  transform: scale(1.1);
+  background: rgb(2, 29, 78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+
+
+@keyframes pulse-2 {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Services Section */
+.services-section {
+  display: flex;
+  justify-content: space-between;
+  background: radial-gradient(circle at 50% 50%, #4ea8a1, #07897e);
+  align-items: flex-start;
+  gap: 70px;
+  /* Increased gap between boxes */
+  position: relative;
+  padding: 70px;
+}
+
+.services-left {
+  flex: 1;
+  position: sticky;
+  top: 15%;
+  /* Only slight shift down */
+  left: 0;
+  text-align: left;
+  /* Aligning to left */
+}
+
+/* Style for the service list */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.service-list-item {
+  padding: 10px;
+  font-size: 1.5rem;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-list-item:hover {
+  color: gold;
+  transform: translateX(5px);
+}
+
+.service-list-item.active {
+  color: gold;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dynamic-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+  margin-top: 15%;
+  opacity: 1;
+  /* Always visible */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.dynamic-heading.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.service-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.service-description {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-top: 20px;
+  color: white;
+  font-weight: 700;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Font Awesome Arrow Icon */
+.arrow-icon {
+  font-size: 40px;
+  color: white;
+  text-align: left;
+  position: absolute;
+  bottom: -20px;
+  /* Positioned below the text */
+  left: 0;
+  animation: bounceArrow 1.5s infinite;
+}
+
+
+
+
+
+/* Right Side Section */
+.services-right {
+  flex: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  /* Increased gap between items */
+  padding: 20px;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+
+.service-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin-bottom: 10px;
+  align-self: flex-end;
+}
+
+/* Wave Effect Using Circular Lines */
+.wave-effect {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: 5px solid gold;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-left: 50%;
+  animation: waveCircle 2s infinite ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wave-effect::before {
+  content: '';
+  width: 70px;
+  height: 70px;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: absolute;
+  animation: waveCircleInner 2s infinite ease-in-out;
+}
+
+
+@keyframes waveCircle {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes waveCircleInner {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+
+
+
+
+.service-subheading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: rgb(0, 0, 0);
+  padding-left: 12px;
+
+}
+
+.service-details {
+  font-size: 1.08rem;
+  color: rgb(255, 255, 255);
+  padding-left: 12px;
+}
+
+
+/* From Uiverse.io by ShrinilDhorda */ 
+.btn-2 {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+.btn-2:active {
+  scale: 0.92;
+}
+
+.btn-2:hover {
+  background: rgb(2,29,78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+
+/* Central White Line in the Center */
+.services-right::after {
+  content: '';
+  width: 3px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: rotate(45deg) translateX(0);
+  }
+
+  100% {
+    transform: rotate(45deg) translateX(50px);
+  }
+}
+
+@keyframes waveAnimation {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* For responsiveness */
+@media (max-width: 850px) {
+  .services-section {
+    flex-direction: column;
+  }
+
+  .services-left {
+    position: static;
+    text-align: center;
+  }
+
+  .services-right {
+    flex: 1;
+  }
+
+  .service-item {
+    align-items: center;
+  }
+
+  .service-heading {
+    text-align: center;
+  }
+
+  .wave-effect {
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background: black;
+  color: white;
+  padding: 20px 50px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+}
+
+.copyright {
+  flex: 1;
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.infonav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.infonav-link:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: gold;
+}
+
+/* Footer responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .copyright {
+    order: 1;
+  }
+}

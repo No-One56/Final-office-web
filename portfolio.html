@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoNav</title>
+    <link rel="stylesheet" href="/public/css/portfolio.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/public/imgs/InfoLogo.png" alt="Logo">
+            <p id="logo-text">InfoNav</p>
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" onclick="toggleNavbar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="team.html">Our Team</a></li>
+            </ul>
+        </div>
+
+        <a href="contact.html">
+            <button class="btn">
+                <i class="call-icon">📞</i> Reach Us
+            </button>
+        </a>
+    </nav>
+
+
+    <section class="portfolio-section">
+        <div class="portfolio-left">
+            <h2 class="portfolio-title">Our Portfolio</h2>
+            <p class="portfolio-description">Showcasing our remarkable projects</p>
+
+            <ul class="project-list"></ul> <!-- List of project headings -->
+
+            <p class="dynamic-heading"></p> <!-- Dynamic heading will appear here -->
+        </div>
+
+        <div class="portfolio-right">
+            <!-- Project 01 -->
+            <div class="project-item">
+                <h3 class="project-heading">01</h3>
+                <div class="wave-effect"></div>
+                <h4 class="project-subheading">Auto detailers Leads</h4>
+                <img src="/public/imgs/p1.png" alt="E-Commerce Platform" class="project-image">
+                <p class="project-details">A robust platform for seamless lead generation.</p>
+                <a href="https://docs.google.com/spreadsheets/d/151LeY8xz9z3wHZo5ip6Cz3Y39ej1eLcmj4MiTIhuAXw/edit#gid=204261000"
+                    target="_blank">
+                    <button class="explore-btn">Explore More</button>
+                </a>
+            </div>
+
+            <!-- Project 02 -->
+            <div class="project-item">
+                <h3 class="project-heading">02</h3>
+                <div class="wave-effect"></div>
+                <h4 class="project-subheading">Targated Contacts</h4>
+                <img src="/public/imgs/p2.png" alt="Social Media Dashboard" class="project-image">
+                <p class="project-details">A dynamic approach to get Targated Contacts.</p>
+                <a href="https://docs.google.com/spreadsheets/d/1Kde3WUN7qQ5YQAWRoTPHnQoGtH85gwSTw5CgRAbz7ns/edit?gid=1265503603#gid=1265503603"
+                    target="_blank">
+                    <button class="explore-btn">Explore More</button>
+                </a>
+            </div>
+
+            <!-- Project 03 -->
+            <div class="project-item">
+                <h3 class="project-heading">03</h3>
+                <div class="wave-effect"></div>
+                <h4 class="project-subheading">Find Linkedin URLS</h4>
+                <img src="/public/imgs/p3.png" alt="Mobile Game App" class="project-image">
+                <p class="project-details">A captivating way to get linkedin URLS</p>
+                <a href="https://docs.google.com/spreadsheets/d/1UgcRGDB-kGZ9jyhL9VEe3PrNiruyeV7TdE_jHL8o9-g/edit?gid=1807691973#gid=1807691973"
+                    target="_blank">
+                    <button class="explore-btn">Explore More</button>
+                </a>
+            </div>
+
+            <!-- Project 04 -->
+            <div class="project-item">
+                <h3 class="project-heading">04</h3>
+                <div class="wave-effect"></div>
+                <h4 class="project-subheading">Products scraped with Python</h4>
+                <img src="/public/imgs/p4.png" alt="AI Chatbot" class="project-image">
+                <p class="project-details">An intelligent work of data Scraping</p>
+                <a href="https://docs.google.com/spreadsheets/d/1BY-UsEto3iZM3io5cFktwT_20papcMncFTSL8xcG444/edit?gid=1762532762#gid=1762532762"
+                    target="_blank">
+                    <button class="explore-btn">Explore More</button>
+                </a>
+            </div>
+
+            <!-- Project 05 -->
+            <div class="project-item">
+                <h3 class="project-heading">05</h3>
+                <div class="wave-effect"></div>
+                <h4 class="project-subheading">Emails of Instagram account</h4>
+                <img src="/public/imgs/p5.png" alt="Data Analytics Tool" class="project-image">
+                <p class="project-details">Powerful insights through data visualization.</p>
+                <a href="https://docs.google.com/spreadsheets/d/16Y8bb6SX4IM2wNZBv9IPOPnHZgPyM75u3i41iwFHahw/edit?gid=0#gid=0"
+                    target="_blank">
+                    <button class="explore-btn">Explore More</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <p>Copyright Reserved to <a href="index.html" class="infonav-link">InfoNav</a></p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/infonavigators"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/infonavigatorss/posts/?feedView=all"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/infonavigators/"><i class="fab fa-instagram"></i></a>
+                <a
+                    href="https://api.whatsapp.com/send?phone=923090266690&text=Hi!%20I%20am%20contacting%20you%20from%20your%20Website."><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/js/portfolio.js"></script>
+
+</body>
+
+</html>
