@@ -2,8 +2,6 @@
  A modern, responsive company website built with HTML, CSS, JavaScript, and Node.js (Express.js). This website showcases the company's services, portfolio, team members, and hiring opportunities, providing an engaging experience for visitors and potential clients.
 
 
-(Replace with an actual screenshot of your website)
-
 🚀 Features
 ✅ Homepage – A professional landing page with a company introduction.
 ✅ Services Section – Detailed information about the company's services.
@@ -45,7 +43,7 @@ Edit
 bash
 Copy
 Edit
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/No-One56/Final-office-web.git
 cd your-repo-name
 2️⃣ Install Dependencies
 
@@ -92,6 +90,6 @@ Homepage	Services Page	Contact Page
 This project is open-source. Feel free to modify and use it for personal or commercial purposes.
 
 📞 Contact
-📧 Email: your-email@example.com
-🌐 Website: yourwebsite.com
-📍 Location: Your City, Country
+📧 Email: sallalzahid51@gmail.com
+🌐 Website: infonavigators.com
+📍 Location: Rahim Yar Khan, Pakistan
